@@ -1,22 +1,29 @@
 from travel_details import travel_details
-passengerdetails=[]
 booking1=travel_details("234","mohit")
-print "Enter the place of origin and destination"
-o=raw_input()
-d=raw_input()
-booking1.set_place(o,d)
-print "Enter the number of passenger"
-print "Enter the name of passenger"
-n=raw_input()
-booking1.get_passengercount(n)
-for i in range(0,int(n)):
-	pn=raw_input()
-	passengerdetails.append(pn)
-print passengerdetails
-booking1.get_passengerdetails(pn)
-print "Enter the date of travel"
-date=raw_input()
-booking1.set_tdate(date)
-booking1.print_details("234")
-print passengerdetails
-
+print "Travel Booking Application"
+print "****************************************"
+print "Do you want to book tickets Y/N"
+choice=raw_input()
+if (choice == 'Y'):
+	print "Enter the place of origin"
+	o=raw_input()
+	print "Enter the Destination place"
+	d=raw_input()
+	booking1.set_place(o,d)
+	print "Enter the date of travel"
+	date=raw_input()
+	booking1.set_tdate(date)
+	print "Are you travelling as group Y/N"
+	choice1=raw_input()
+	if (choice1=='Y'):
+		booking1.get_passengerdetails()
+	else:
+		booking1.get_passengerdetails()
+		print "Booked tickets with following details" 
+		booking1.print_details("234")
+	booking1.type_of_travel()
+	print "Booked tickets with following details"
+	booking1.print_details("234")
+else:
+	print "Exit the application"
+	
